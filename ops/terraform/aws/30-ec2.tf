@@ -2,6 +2,7 @@ data "template_file" "installation" {
   template = file("${path.module}/files/installation.sh")
 
   vars = {
+    TOOL_NAME     = local.aws.name
     EMAIL_ADDRESS = local.aws.email
     DOCKER_CONFIG = "/root/.docker"
     S3_BUCKET     = aws_s3_bucket.bucket.bucket

@@ -31,7 +31,7 @@ done
 aws s3 cp s3://${S3_BUCKET}/${S3_CE_KEY} /home/ec2-user/${S3_CE_KEY}
 
 export EMAIL_ADDRESS=${EMAIL_ADDRESS}
-export subject="BTC Monitor"
+export subject=${TOOL_NAME}
 
 envsubst '$EMAIL_ADDRESS,$subject' < /home/ec2-user/${S3_CE_KEY} > /home/ec2-user/email.txt
 
