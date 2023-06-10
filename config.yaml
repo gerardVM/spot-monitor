@@ -1,0 +1,25 @@
+aws:
+  name: "aws-spot-monitor"             # Name for your resources
+  region: "us-east-1"                  # Choose an AWS region 
+  image: "al2023-ami-2023"             # Amazon Linux 2023
+  architecture: "x86_64"               # Architecture
+  instance_type: "t2.micro"            # Around $0,13 per 24h
+  market_type: "spot"                  # Spot instance
+  username: "example"                  # Username for the bucket
+  email: "example@gmail.com"           # Email for alerts
+  zerotier_network: "aaaaaaaaaaaaaaaa" # Zerotier network id
+
+zerotier:
+  network_name: "aws-spot-monitor"     # Name for your network
+  members:                             # List of members
+    - name: "aws"
+      id: "aaaaaaaaaa"
+      ip_assignments: ["10.0.0.1"]
+    - name: "worker"
+      id: "bbbbbbbbbb"
+      ip_assignments: ["10.0.0.2"]
+    - name: "network-guest"
+      id: "cccccccccc"
+      ip_assignments: ["10.0.0.3"]
+
+volatile_encryption_key: "arn:aws:kms:us-east-1:0123456789877759:key/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"

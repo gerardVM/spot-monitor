@@ -1,0 +1,4 @@
+tfplan.out
+.terraform*
+*.json
+config.dec.yaml
